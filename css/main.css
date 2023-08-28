@@ -1,0 +1,257 @@
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/nunito-sans-v15-latin-300.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/nunito-sans-v15-latin-300.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/nunito-sans-v15-latin-300.woff2") format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url("../fonts/nunito-sans-v15-latin-300.woff")
+            format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */ url("../fonts/nunito-sans-v15-latin-300.ttf")
+            format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+            url("../fonts/nunito-sans-v15-latin-300.svg#NunitoSans") format("svg"); /* Legacy iOS */
+}
+/* nunito-sans-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/nunito-sans-v15-latin-regular.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/nunito-sans-v15-latin-regular.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/nunito-sans-v15-latin-regular.woff2") format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url("../fonts/nunito-sans-v15-latin-regular.woff")
+            format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */ url("../fonts/nunito-sans-v15-latin-regular.ttf")
+            format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+            url("../fonts/nunito-sans-v15-latin-regular.svg#NunitoSans") format("svg"); /* Legacy iOS */
+}
+/* nunito-sans-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/nunito-sans-v15-latin-600.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/nunito-sans-v15-latin-600.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/nunito-sans-v15-latin-600.woff2") format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url("../fonts/nunito-sans-v15-latin-600.woff")
+            format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */ url("../fonts/nunito-sans-v15-latin-600.ttf")
+            format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+            url("../fonts/nunito-sans-v15-latin-600.svg#NunitoSans") format("svg"); /* Legacy iOS */
+}
+/* nunito-sans-800 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../fonts/nunito-sans-v15-latin-800.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/nunito-sans-v15-latin-800.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/nunito-sans-v15-latin-800.woff2") format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url("../fonts/nunito-sans-v15-latin-800.woff")
+            format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */ url("../fonts/nunito-sans-v15-latin-800.ttf")
+            format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+            url("../fonts/nunito-sans-v15-latin-800.svg#NunitoSans") format("svg"); /* Legacy iOS */
+}
+:root {
+    --main-white-color: #fff;
+    --main-font-familiy: "Nunito Sans";
+    --main-dark-color: #111517;
+    --main-dark-bgcolor: #202c36;
+    --main-lieght-bgcolor: #fafafa;
+    --mian-body-color: #fafafa;
+    --main-item-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--main-font-familiy);
+    background-color: var(--main-lieght-bgcolor);
+    /* background-color: black; */
+}
+.dark {
+    --main-white-color: #111517;
+    --main-font-familiy: "Nunito Sans";
+    --main-dark-color: #fff;
+    --main-lieght-bgcolor: #202c36;
+    --main-dark-bgcolor: #fafafa;
+    --main-body-color: #202c36;
+    --main-item-color: #2b3844;
+}
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.header {
+    background: var(--main-item-color);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+}
+
+.header__wrapper {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__title {
+    margin: 0;
+    font-family: var(--main-font-familiy);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 20px; /* 142.857% */
+    color: var(--main-dark-color);
+}
+.header__btn-wrapper {
+    position: relative;
+}
+.header__chek {
+    display: none;
+}
+
+.header__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--main-font-familiy);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--main-dark-color);
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.header__btn::before {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url("../images/lieght.svg");
+    margin-right: 8px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+}
+
+.site-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    padding-top: 24px;
+}
+.form__input {
+    position: relative;
+    min-width: 280px;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 40px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    /* background-color: #111517; */
+    background-color: var(--main-item-color);
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+    outline: none;
+    /* color: var(--main-white-color); */
+}
+.form__input::placeholder {
+    color: var(--main-dark-color);
+}
+
+.form__select {
+    position: relative;
+    width: 200px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 5px;
+    background: var(--main-item-color);
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+    outline: none;
+    color: var(--main-dark-color);
+}
+/* .flaggs__wrapper {
+
+} */
+.flaggs__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 0;
+    list-style: none;
+    margin: 0 auto;
+    gap: 60px;
+}
+.flaggs__item {
+    max-width: 264px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    background: var(--main-item-color);
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.5s ease;
+}
+.flaggs__item:hover {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+}
+.flaggs__img {
+    border-radius: 5px;
+}
+.flaggs__item-wrap {
+    padding: 24px;
+}
+.flaggs__title {
+    margin: 0;
+    margin-bottom: 16px;
+    color: var(--main-dark-color);
+    font-family: var(--main-font-familiy);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 26px;
+    text-align: center; /* 144.444% */
+}
+.flaggs__desc {
+    margin: 0;
+    margin-bottom: 8px;
+    color: var(--main-dark-color);
+    font-family: var(--main-font-familiy);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+@media only screen and (min-width:900px) {
+    .container{
+padding: 0 70px;
+    }
+    .header__title{
+        font-size: 24px;
+    } 
+    .header__btn{
+        font-size: 16px;
+    }
+    .header__btn::before {
+        background-size:20px 20px ;
+    }
+
+    
+}
