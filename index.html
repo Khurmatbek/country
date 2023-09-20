@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Country</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/notrmalise.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -31,11 +32,17 @@
         <section class="site-section"> 
             <div class="container">
                 <form class="site-form form">
-                    <input class="form__input" type="search" placeholder="Search for a country…">
+                    <label class="label">
+                        <input class="form__input" type="search" placeholder="Search for a country…">
+                        <button class="btn" type="submit">🔍</button>
+                    </label>
                     <select class="form__select">
-                        <template class="template__select">
-                            <option class="option" value="Filter by Region" >Filter by Region</option>
-                        </template>
+                        <option class="option" value="Asia">Asia</option>
+                        <option class="option" value="Africa">Africa</option>
+                        <option class="option" value="Oceania">Oceania</option>
+                        <option class="option" value="America">Americas</option>
+                        <option class="option" value="Europe">Europe</option>
+
                     </select>
                 </form>
             </div>
@@ -54,6 +61,8 @@
                                     <p class="flaggs__desc size">Population: 81,770,900</p>
                                     <p class="flaggs__desc region">Region: Europe</p>
                                     <p class="flaggs__desc capital">Capital: Berlin</p>
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                        data-bs-toggle="modal">More...</button>
                                 </div>
                             </li>
 
@@ -63,6 +72,56 @@
             </div>
         </section>
         <!--  site flaaggs section finished -->
+
+        <!--  modalka srtart -->
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">First Page</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Show a second modal and hide this one with the button below.
+                    </div>
+                    <p class="official">
+
+                    </p>
+                    <span class="current">
+
+                    </span>
+                    <a class="adress"></a>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                            Open second modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Second Page</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="modal-image">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                        
+                            Back to first</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </main>
     <!--  site main finish -->
     <!--  site footer  -->
@@ -70,7 +129,7 @@
 
     </footer>
     <!--  site footer finish  -->
-
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

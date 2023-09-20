@@ -21,27 +21,32 @@ function darkMode() {
 function noDark() {
     document.body.classList.remove("dark");
     localStorage.setItem("mode", "light");
-
 }
-
-
-/*   
- create part
-*/
 let regionArr = [];
 const list = document.querySelector(".flaggs__list");
 const form = document.querySelector(".form")
 const select = document.querySelector(".form__select");
 const fragment = new DocumentFragment();
 const fragmentselect = new DocumentFragment();
+const template = document.querySelector(".template_country").content;
+const modalbody = document.querySelector(".modal-body");
 
-
-
+form.addEventListener("submit", evt => {
+    list.innerHTML = ""
+    evt.preventDefault();
+    const selectValue = select.value;
+    console.log(selectValue);
+    const search = document.querySelector(".form__input");
+    const searchValue = search.value;
+    MyGetFunction(`https://restcountries.com/v3.1/region/${selectValue}`)
+    MyGetFunction(`https://restcountries.com/v3.1/name/${searchValue}`)
+})
+/* === */
 function myrenderFunction(array) {
-    // list.innerHTML = ""
+    list.innerHTML = ""
     array.forEach(element => {
         if (element.altSpellings[1] != undefined) {
-            const template = document.querySelector(".template_country").content;
+
             const cloneTemplate = template.cloneNode(true);
             cloneTemplate.querySelector(".flaggs__img").src = `${element.flags
                 .png}`;
@@ -49,7 +54,11 @@ function myrenderFunction(array) {
             cloneTemplate.querySelector(".size").textContent = `Populyation: ${element.population}`
             cloneTemplate.querySelector(".region").textContent = `Region: ${element.region}`
             cloneTemplate.querySelector(".capital").textContent = `Capital: ${element.capital}`
+            // cloneTemplate.querySelector(".flaggs__img").dataset.id = element.name;
+            cloneTemplate.querySelector(".btn").dataset.id = element.name.common;
+
             fragment.append(cloneTemplate);
+
 
         }
         list.append(fragment)
@@ -59,51 +68,49 @@ function myrenderFunction(array) {
         if (!findRegion) {
             regionArr.push(element.region)
         }
-
-
-
     });
-    regionArr.forEach(item => {
-        // select.innerHTML=""
-        const template_select = document.querySelector(".template__select").content;
-        const secondClone = template_select.cloneNode(true);
-        secondClone.querySelector(".option").textContent = item;
-        secondClone.querySelector(".option").value = item;
-        fragmentselect.append(secondClone);
-        select.append(fragmentselect)
-    })
-
-
-
 }
-// const selectValue = select.value;
-
-async function MyGetFunction(url, render, region) {
+let myArr = [];
+async function MyGetFunction(url) {
     try {
         const respons = await fetch(url);
         const data = await respons.json();
         const result = data;
-        if (render) {
-            myrenderFunction(data.splice(0, 51), regionArr)
-        }
-        if (region) {
-            myrenderFunction(data, regionArr)
-        }
+        result.forEach(item => {
+            myArr.push(item)
+        })
+        myrenderFunction(data.splice(0, 51))
     } catch (error) {
         console.log(error)
     }
 }
-MyGetFunction("https://restcountries.com/v3.1/all", true, false)
-// list.innerHTML=""
+console.log(myArr)
+MyGetFunction("https://restcountries.com/v3.1/all");
+list.addEventListener("click", evt => {
+    if (evt.target.matches(".btn")) {
+        console.log("salom")
+        const BtnId = evt.target.dataset.id;
+        const FindBtn = myArr.find(item => {
+            modalbody.textContent = item.name.common;
+            const modalimage = document.querySelector(".modal-image");
+            modalimage.src = item.flags.png;
+            const official = document.querySelector(".official");
+            official.textContent = item.name.official
+            const currentsytmbol = document.querySelector(".current");
+            currentsytmbol.textContent = item.idd.root;
 
-select.addEventListener("change", evt => {
-    // list.innerHTML=""
-    evt.preventDefault();
-    const selectValue = select.value;
-    console.log(selectValue)
-    MyGetFunction(`https://restcountries.com/v3.1/region/${selectValue}`, true, false);
-
+            const address = document.querySelector(".adress");
+            const countryLocation = `${item.latlng[0]}, ${item.latlng[1]}`;
+            address.href = `https://www.google.com/maps/place/${countryLocation}`
+            address.textContent = `lat:${item.latlng[0]}, geo:${item.latlng[1]}`;
+            return BtnId == item.name.common
+        })
+        console.log(FindBtn)
+    }
 })
+
+
+
 
 
 
